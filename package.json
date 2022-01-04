@@ -5,6 +5,7 @@
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
+    "docs-version:build": "cross-env BUIDL_DOC_VERSION=version npm run docs:build",
     "docs:deploy": "gh-pages -d docs-dist",
     "build": "father-build",
     "deploy": "npm run docs:build && npm run docs:deploy",
@@ -50,6 +51,7 @@
     "@typescript-eslint/parser": "^5.9.0",
     "@umijs/fabric": "^2.8.1",
     "@umijs/test": "^3.0.5",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "dumi": "^1.1.0",
     "eslint": "^8.6.0",
