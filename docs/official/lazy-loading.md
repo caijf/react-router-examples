@@ -17,4 +17,4 @@ on demand using `React.lazy()` and dynamic `import()`. Using this technique, pag
 
 > [StackBlitz](https://stackblitz.com/github/remix-run/react-router/tree/main/examples/lazy-loading?file=src/App.tsx)
 
-<code src='../../demos/official/lazy-loading' iframe="500" />
+<code src='../../demos/official/lazy-loading' inline />
