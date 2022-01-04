@@ -6,7 +6,7 @@ title: README
 
 > [react-router 官网](https://reactrouter.com/)
 
-所有示例使用的版本 `react-router-dom v6` ，包含官方示例和个人示例。
+当前示例使用的版本 `react-router-dom v6`。
 
 ## 注意说明
 

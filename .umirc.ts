@@ -21,10 +21,13 @@ const prodConfig: any = {};
 
 if (isProd) {
   prodConfig.chunks = ['vendors', 'umi'];
-  prodConfig.chainWebpack = function (memo, { webpack }) {
-    memo.resolve.alias.delete('react-router');
-    memo.resolve.alias.delete('history');
+}
 
+const chainWebpack = (memo, { webpack }) => {
+  memo.resolve.alias.delete('react-router');
+  memo.resolve.alias.delete('history');
+
+  if (isProd) {
     memo.merge({
       optimization: {
         minimize: true,
@@ -41,8 +44,8 @@ if (isProd) {
         },
       },
     });
-  };
-}
+  }
+};
 
 export default defineConfig({
   title: 'react-router-examples',
@@ -61,10 +64,7 @@ export default defineConfig({
     //   path: `https://doly-dev.github.io/react-router-examples/${preVersionSiteRoot}/index.html`
     // },
   ],
-  chainWebpack(memo) {
-    memo.resolve.alias.delete('react-router');
-    memo.resolve.alias.delete('history');
-  },
+  chainWebpack,
   ...prodConfig,
   // more config: https://d.umijs.org/config
 });
