@@ -39,11 +39,16 @@
     ]
   },
   "dependencies": {
-    "react": "^16.12.0 || ^17.0.0"
+    "react": "^16.12.0 || ^17.0.0",
+    "react-router-dom-v6": "npm:react-router-dom@6",
+    "react-transition-group": "^4.4.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.0.1",
     "@commitlint/config-conventional": "^16.0.0",
+    "@reach/dialog": "^0.16.2",
+    "@reach/visually-hidden": "^0.16.0",
+    "@stackblitz/sdk": "^1.5.3",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.0.3",
@@ -58,6 +63,7 @@
     "eslint-plugin-react": "^7.28.0",
     "father-build": "^1.17.2",
     "gh-pages": "^3.0.0",
+    "jsurl": "^0.1.5",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.1",
     "prettier-plugin-two-style-order": "^1.0.1",

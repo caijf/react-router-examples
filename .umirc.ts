@@ -9,8 +9,9 @@ const preVersionSiteRoot = `refs/heads/v${preMajorVersionNumber}`;
 
 const version = process.env.BUIDL_DOC_VERSION ? versionSiteRoot : 'latest';
 
-const serverRootDirect =
-  process.env.NODE_ENV === 'production' ? 'https://doly-dev.github.io/react-router-examples/' : '/';
+const isProd = process.env.NODE_ENV === 'production';
+
+const serverRootDirect = isProd ? 'https://doly-dev.github.io/react-router-examples/' : '/';
 const logo = 'https://www.caijinfeng.com/assets/images/logo-doly@3x.png';
 const favicon = 'https://www.caijinfeng.com/assets/images/doly-touch-icon_48x48.png';
 
@@ -18,10 +19,13 @@ const publicPath = serverRootDirect + version + '/';
 
 const prodConfig: any = {};
 
-if (process.env.NODE_ENV === 'production') {
+if (isProd) {
   prodConfig.chunks = ['vendors', 'umi'];
-  prodConfig.chainWebpack = function (config, { webpack }) {
-    config.merge({
+  prodConfig.chainWebpack = function (memo, { webpack }) {
+    memo.resolve.alias.delete('react-router');
+    memo.resolve.alias.delete('history');
+
+    memo.merge({
       optimization: {
         minimize: true,
         splitChunks: {
@@ -57,6 +61,10 @@ export default defineConfig({
     //   path: `https://doly-dev.github.io/react-router-examples/${preVersionSiteRoot}/index.html`
     // },
   ],
+  chainWebpack(memo) {
+    memo.resolve.alias.delete('react-router');
+    memo.resolve.alias.delete('history');
+  },
   ...prodConfig,
   // more config: https://d.umijs.org/config
 });
