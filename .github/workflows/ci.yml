@@ -9,6 +9,7 @@ on:
     paths:
       - .dumi/**
       - docs/**
+      - demos/**
       - src/**
       - .fatherrc.ts
       - .umirc.ts
