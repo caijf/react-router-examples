@@ -8,18 +8,7 @@ group:
 
 # Transition Outlet Example
 
-使用过度组件包裹 `Outlet`。
-
-问题：
-
-- 页面离开时可能为当前页面
-- 使用 `React.StrictMode` 的情况下，有警告
-
-<Alert type="error">
-  Warning: findDOMNode is deprecated in StrictMode. findDOMNode was passed an instance of Transition
-  which is inside StrictMode. Instead, add a ref directly to the element you want to reference.
-  Learn more about using refs safely here: https://fb.me/react-strict-mode-find-node
-</Alert>
+- UI 重复问题，没有 Switch location 区分
 
 <br/>
 
